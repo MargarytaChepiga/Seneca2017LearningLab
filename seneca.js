@@ -14,7 +14,7 @@ exports.isValidEmail = function (email) {
 };
 
 /**
- * Given a string `name`, return a formatted Seneca address for
+ * Given a string `name`, return a formatted Seneca email address for
  * this person. NOTE: the email doesn't need to be real/valid/active.
  */
 exports.formatSenecaEmail = function (name) {
