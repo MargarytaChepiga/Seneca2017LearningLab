@@ -6,7 +6,14 @@
  * of a valid Seneca College email address, `false` othewise.
  */
 exports.isValidEmail = function (email) {
-  return /@myseneca.ca$/.test(email);
+  const validEmail = /^[a-z]{2,}\.?[a-z]{3,}[0-9]{0,3}@(myseneca|senecacollege|senecac\.on).ca$/;
+  if (typeof email === 'string') {
+    if (validEmail.test(email)) {
+      return true;
+    }
+    return false;
+  }
+  return false;
 };
 
 /**
@@ -14,5 +21,8 @@ exports.isValidEmail = function (email) {
  * this person. NOTE: the email doesn't need to be real/valid/active.
  */
 exports.formatSenecaEmail = function (name) {
-  return `${name}@myseneca.ca`;
+  if (name && typeof name === 'string') {
+    return `${name}@myseneca.ca`;
+  }
+  return false;
 };
